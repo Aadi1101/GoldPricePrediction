@@ -1,0 +1,9 @@
+{
+    "Linear Regression": 0.8496731504729795, 
+    "Random Forest": 0.9911328297584309, 
+    "Decision Tree": 0.9876463509225877, 
+    "Gradient Boosting": 0.9865863183051502, 
+    "XGBRegressor": 0.9902747531359738, 
+    "CatBoosting Regressor": 0.9896801312799061, 
+    "AdaBoost Regressor": 0.9355928439672261
+}

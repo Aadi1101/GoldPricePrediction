@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 from data_transformation import DataTransformation, DataTransformationConfig
-
+from model_trainer import ModelTrainer, ModelTrainerConfig
 @dataclass
 class DataIngestionConfig():
     raw_path:str = os.path.join('artifacts','raw.csv')
@@ -44,4 +44,6 @@ if __name__ == '__main__':
     obj = DataIngestion()
     trainset,testset = obj.initiate_data_ingestion()
     transform_obj = DataTransformation()
-    transform_obj.initiate_data_transformation(trainset=trainset,testset=testset)
+    train_arr,test_arr = transform_obj.initiate_data_transformation(trainset=trainset,testset=testset)
+    model_obj = ModelTrainer()
+    model_obj.initiate_model_trainer(train_arr=train_arr,test_arr=test_arr)
