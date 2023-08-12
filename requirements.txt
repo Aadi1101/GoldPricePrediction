@@ -5,6 +5,7 @@ seaborn
 dill
 xgboost
 catboost
-Flask
-gradio
+fastapi
+gradio==3.9
+gradio-client
 -e .

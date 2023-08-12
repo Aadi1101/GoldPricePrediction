@@ -8,7 +8,10 @@
     <div id="interface"></div>
     <script src="https://cdn.jsdelivr.net/npm/gradio"></script>
     <script>
-        gr("#interface", {server: 'http://localhost:5000'})
+        const iface = gr.Interface.httpInputElement({
+            server:'http://127.0.0.1:7860/'
+        });
+        iface.mount(document.querySelector('#interface'));
     </script>
 </body>
 </html>
