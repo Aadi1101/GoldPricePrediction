@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,render_template
 import dill
 import numpy as np
 
@@ -7,7 +7,7 @@ import numpy as np
 app=Flask('__name__')
 @app.route('/')
 def read_main():
-    return {"message":"this is your main app"}
+    return render_template('index.html')
 
 @app.route('/predict',methods=['GET'])
 def generate_output():

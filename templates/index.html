@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Gradio Interface</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Price Prediction</title>
 </head>
 <body>
-    <!-- You can customize the size and appearance of the interface here -->
-    <div id="interface"></div>
-    <script src="https://cdn.jsdelivr.net/npm/gradio"></script>
-    <script>
-        const iface = gr.Interface.httpInputElement({
-            server:'http://127.0.0.1:7860/'
-        });
-        iface.mount(document.querySelector('#interface'));
-    </script>
+<header>
+  <h1>Gold Price Prediction</h1>
+</header>
+<main>
+  <p>Welcome to my Gold Price Prediction page! Here, I provide insights into various financial instruments and their relationships with the price of gold.</p>
+  <h2>Financial Instruments and Gold</h2>
+  <p>Understanding the relationships between different assets and the price of gold can offer valuable insights for investors and analysts. Here are a few key financial symbols:</p>
+  <ul>
+    <li><strong>SPX:</strong> The S&P 500 Index represents the performance of major U.S. companies and can show correlations with gold during times of market uncertainty.</li>
+    <li><strong>USO:</strong> The United States Oil Fund tracks the price of crude oil and can have connections to gold due to shared economic factors.</li>
+    <li><strong>SLV:</strong> The iShares Silver Trust follows silver prices, with both gold and silver being precious metals that can exhibit similar trends.</li>
+    <li><strong>EUR/USD:</strong> The Euro to U.S. Dollar exchange rate can impact gold prices based on global economic conditions and market sentiment.</li>
+  </ul>
+  <p>Remember, these relationships can be complex and influenced by various factors. Analyzing them can provide insights into potential market trends and investment opportunities.</p>
+  <p>Enter above fields as comma-separated-values</p>
+  <br><br>
+  <h2>Input formats</h2>
+  <ul>
+    <li>update url:/predict?data=spx,uso,slv,eur/usd</li>
+    <li>Enter data as json file:{"data":"spx,uso,slv,eur/usd"}</li>
+  </ul>
+</main>
 </body>
 </html>
