@@ -34,4 +34,4 @@ def process_and_predict(input_text,json_data):
     GLD = model.predict(output_text_dims)
     return GLD[0]
 if __name__=='__main__':
-    app.run()
+    app.run(host='0.0.0.0',port=5001)
