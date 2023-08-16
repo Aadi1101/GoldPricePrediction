@@ -25,13 +25,13 @@ def process_and_predict(input_text,json_data):
         output_text = [float(item) for item in input_text['data'].split(',')]
     else:
         output_text = [float(item) for item in input_text.split(',')]
-    with open('src\models\preprocessor.pkl', 'rb') as p:
+    with open('src/models/preprocessor.pkl', 'rb') as p:
         preprocessor = dill.load(p)
     output_text = np.array(output_text).reshape(1, -1)
     output_text_dims = preprocessor.transform(output_text)
-    with open('src\models\\best_model.pkl', 'rb') as m:
+    with open('src/models/best_model.pkl', 'rb') as m:
         model = dill.load(m)
     GLD = model.predict(output_text_dims)
     return GLD[0]
 if __name__=='__main__':
-    app.run()
+    app.run(host='0.0.0.0',port=5000)
